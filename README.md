@@ -8,6 +8,7 @@
 * Compiling scripts with Clang.
 * Script code autocomplete with F1 key.
 * Debugging scripts with Visual Studio debugger.
+* Precompiled headers for fast compilation and autocomplete.
 
 ## Requirements:
 

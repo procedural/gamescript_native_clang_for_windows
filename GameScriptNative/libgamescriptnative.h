@@ -788,6 +788,10 @@ void imageBind(Number handle);
 
 void imageUnbind(Number handle);
 
+void imageDraw(Number handle, Number x, Number y, Number z, Number w, Number h);
+
+void imageDrawSubsection(Number handle, Number x, Number y, Number z, Number w, Number h, Number sx, Number sy, Number sw, Number sh);
+
 Bool shaderBegin(String label, String filepathShaderVert, String filepathShaderFrag) /* -> Bool shadersAreValid */;
 
 void shaderEnd(String label);

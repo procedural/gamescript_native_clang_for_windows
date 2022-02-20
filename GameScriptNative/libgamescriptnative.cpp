@@ -324,6 +324,8 @@ void * _gsCProcedureImageGammaCorrect(void * gs, void * data, int argc, void ** 
 void * _gsCProcedureImageUpdate(void * gs, void * data, int argc, void ** args);
 void * _gsCProcedureImageBind(void * gs, void * data, int argc, void ** args);
 void * _gsCProcedureImageUnbind(void * gs, void * data, int argc, void ** args);
+void * _gsCProcedureImageDraw(void * gs, void * data, int argc, void ** args);
+void * _gsCProcedureImageDrawSubsection(void * gs, void * data, int argc, void ** args);
 void * _gsCProcedureShaderBegin(void * gs, void * data, int argc, void ** args);
 void * _gsCProcedureShaderEnd(void * gs, void * data, int argc, void ** args);
 void * _gsCProcedureShaderSetUniform4f(void * gs, void * data, int argc, void ** args);
@@ -3555,6 +3557,34 @@ void imageUnbind(Number handle) {
     _gsVoidPointerFromNumber(handle),
   };
   _gsCProcedureImageUnbind(0, 0, 0, args);
+}
+
+void imageDraw(Number handle, Number x, Number y, Number z, Number w, Number h) {
+  void * args[] = {
+    _gsVoidPointerFromNumber(handle),
+    _gsVoidPointerFromNumber(x),
+    _gsVoidPointerFromNumber(y),
+    _gsVoidPointerFromNumber(z),
+    _gsVoidPointerFromNumber(w),
+    _gsVoidPointerFromNumber(h),
+  };
+  _gsCProcedureImageDraw(0, 0, 0, args);
+}
+
+void imageDrawSubsection(Number handle, Number x, Number y, Number z, Number w, Number h, Number sx, Number sy, Number sw, Number sh) {
+  void * args[] = {
+    _gsVoidPointerFromNumber(handle),
+    _gsVoidPointerFromNumber(x),
+    _gsVoidPointerFromNumber(y),
+    _gsVoidPointerFromNumber(z),
+    _gsVoidPointerFromNumber(w),
+    _gsVoidPointerFromNumber(h),
+    _gsVoidPointerFromNumber(sx),
+    _gsVoidPointerFromNumber(sy),
+    _gsVoidPointerFromNumber(sw),
+    _gsVoidPointerFromNumber(sh),
+  };
+  _gsCProcedureImageDrawSubsection(0, 0, 0, args);
 }
 
 Bool shaderBegin(String label, String filepathShaderVert, String filepathShaderFrag) /* -> Bool shadersAreValid */ {
